@@ -16,6 +16,8 @@ export const COMMANDS = [
     items: [
       { cmd: "help",                    desc: "Show this command list" },
       { cmd: "clear",                   desc: "Clear the terminal" },
+      { cmd: "ls",                      desc: "List directory files (about.txt, skills.txt, etc.)" },
+      { cmd: "cat [file]",              desc: "Display file content" },
       { cmd: "banner",                  desc: "Show ASCII banner again" },
       { cmd: "whoami",                  desc: "Who is the visitor?" },
       { cmd: "time",                    desc: "Current time" },

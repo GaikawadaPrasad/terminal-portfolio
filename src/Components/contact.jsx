@@ -2,56 +2,53 @@ import React from "react";
 
 const CONTACTS = [
   {
-    icon: "[in]",
+    icon: "in",
     label: "LinkedIn",
     display: "prasadgaikawada",
     href: "https://www.linkedin.com/in/prasadgaikawada/",
   },
   {
-    icon: "[gh]",
+    icon: "gh",
     label: "GitHub",
-    display: "princeprasad24",
-    href: "https://github.com/princeprasad24",
+    display: "GaikawadaPrasad",
+    href: "https://github.com/GaikawadaPrasad",
   },
   {
-    icon: "[@]",
+    icon: "email",
     label: "Email",
-    display: "via portfolio contact form",
-    href: "https://princeprasad24.github.io/prasad-portfolio/#contact",
+    display: "venkatdurgaprasad755@gmail.com",
+    href: "mailto:venkatdurgaprasad755@gmail.com",
   },
   {
-    icon: "[>>]",
-    label: "Portfolio",
+    icon: "web",
+    label: "Website",
     display: "prasad-portfolio [link]",
-    href: "https://princeprasad24.github.io/prasad-portfolio/",
+    href: "https://gaikawadaprasad.github.io/prasad-portfolio/",
   },
 ];
 
 export default function Contact() {
   return (
-    <div className="section-card">
-      <div className="section-title">
-        <span className="icon">[~]</span> Get In Touch
+    <fieldset className="cli-fieldset">
+      <legend className="cli-legend">[~] contact.txt</legend>
+
+      <div className="contact-container">
+        {CONTACTS.map((c) => (
+          <div key={c.label} className="contact-row">
+            <span className="contact-label">{c.label.padEnd(10)}:</span>
+            <span className="contact-value">
+              <a href={c.href} target="_blank" rel="noreferrer" className="cli-link">
+                {c.display}
+              </a>
+            </span>
+          </div>
+        ))}
       </div>
 
-      {CONTACTS.map((c) => (
-        <div key={c.label} className="contact-item">
-          <span className="contact-icon" style={{ fontFamily: "monospace", fontWeight: "bold" }}>
-            {c.icon}
-          </span>
-          <span className="contact-label">{c.label}</span>
-          <a href={c.href} target="_blank" rel="noreferrer" className="info-value">
-            <span style={{ color: "var(--cyan)", borderBottom: "1px dashed var(--cyan)" }}>
-              {c.display}
-            </span>
-          </a>
-        </div>
-      ))}
-
-      <hr className="divider" />
+      <div className="cli-divider">--------------------------------------------------</div>
       <p style={{ fontSize: "0.78rem", color: "var(--text-dim)" }}>
         Open to freelance, full-time and collaboration opportunities.
       </p>
-    </div>
+    </fieldset>
   );
 }
