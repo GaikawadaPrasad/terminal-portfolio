@@ -10,8 +10,21 @@ const ASCII_BANNER = `
 
 export default function Home() {
   return (
-    <div className="section-card" style={{ border: "none", background: "transparent", padding: "8px 0" }}>
+    <div
+      className="section-card"
+      style={{ border: "none", background: "transparent", padding: "8px 0" }}
+    >
+      <pre>
+        <p>terminal@user:~$</p>
+
+        <p>terminal@user:~$vdp install terminal-portfolio</p>
+
+        <p>terminal-portfolio@0.0.0 dev</p>
+
+        <p>portfolio [Version 0.3.0]</p>
+      </pre>
       <pre className="ascii-art">{ASCII_BANNER}</pre>
+
       <div style={{ marginTop: "12px", fontSize: "0.85rem" }}>
         <p>
           <span style={{ color: "var(--cyan)" }}>visitor@terminal</span>
@@ -19,7 +32,8 @@ export default function Home() {
           <span>whoami</span>
         </p>
         <p style={{ marginTop: "4px", color: "var(--text-dim)" }}>
-          -&gt; <span style={{ color: "var(--green)" }}>Prasad Gaikawada</span> -- Frontend Developer &amp; Creative Coder
+          -&gt; <span style={{ color: "var(--green)" }}>Prasad Gaikawada</span>{" "}
+          -- Frontend Developer &amp; Creative Coder
         </p>
         <p style={{ color: "var(--text-dim)", marginTop: "4px" }}>
           -&gt; Based in India | Open to opportunities
@@ -30,9 +44,10 @@ export default function Home() {
       </div>
       <hr className="divider" />
       <p style={{ fontSize: "0.78rem", color: "var(--text-dim)" }}>
-        Type <span style={{ color: "var(--green)" }}>help</span> to see all commands. Use{" "}
-        <span style={{ color: "var(--amber)" }}>Up/Down</span> to browse history.{" "}
-        Press <span style={{ color: "var(--amber)" }}>Tab</span> to autocomplete.
+        Type <span style={{ color: "var(--green)" }}>help</span> to see all
+        commands. Use <span style={{ color: "var(--amber)" }}>Up/Down</span> to
+        browse history. Press <span style={{ color: "var(--amber)" }}>Tab</span>{" "}
+        to autocomplete.
       </p>
     </div>
   );
