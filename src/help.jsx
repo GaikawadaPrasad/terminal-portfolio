@@ -1,61 +1,41 @@
 import React from "react";
 
-const Help = () => {
-  return (
-    <div className="help-container">
-      <h3>Available Commands</h3>
-      <table className="help-table">
-        <thead>
-          <tr>
-            <th>Command</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>about</td>
-            <td>Displays information about me</td>
-          </tr>
-          <tr>
-            <td>clear</td>
-            <td>Clears the terminal screen</td>
-          </tr>
-          <tr>
-            <td>contact</td>
-            <td>Shows contact info and social media links</td>
-          </tr>
-          <tr>
-            <td>projects</td>
-            <td>Lists all of my projects</td>
-          </tr>
-          <tr>
-            <td>skills</td>
-            <td>Displays my technical skills</td>
-          </tr>
-          <tr>
-            <td>home</td>
-            <td>go to home</td>
-          </tr>
-          <tr>
-            <td>help</td>
-            <td>Lists all available commands</td>
-          </tr>
-          <tr>
-            <td>time</td>
-            <td>Know  current time</td>
-          </tr>
-          <tr>
-            <td>date</td>
-            <td>Know  current date</td>
-          </tr>
-          <tr>
-            <td>witchGUI</td>
-            <td>Switch to GUI portfolio</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-};
+export const COMMANDS = [
+  {
+    category: "Navigation",
+    items: [
+      { cmd: "home",      desc: "Show welcome banner" },
+      { cmd: "about",     desc: "Who am I?" },
+      { cmd: "skills",    desc: "Technical skill set" },
+      { cmd: "projects",  desc: "Portfolio of projects" },
+      { cmd: "contact",   desc: "Contact & social links" },
+    ],
+  },
+  {
+    category: "Terminal",
+    items: [
+      { cmd: "help",                    desc: "Show this command list" },
+      { cmd: "clear",                   desc: "Clear the terminal" },
+      { cmd: "banner",                  desc: "Show ASCII banner again" },
+      { cmd: "whoami",                  desc: "Who is the visitor?" },
+      { cmd: "time",                    desc: "Current time" },
+      { cmd: "date",                    desc: "Current date" },
+      { cmd: "theme [green|amber|cyan]",desc: "Switch terminal color theme" },
+    ],
+  },
+  {
+    category: "External",
+    items: [
+      { cmd: "resume",    desc: "Open resume / CV" },
+      { cmd: "switchGUI", desc: "Open GUI portfolio in new tab" },
+      { cmd: "exit",      desc: "Close terminal (about:blank)" },
+    ],
+  },
+];
 
-export default Help;
+// Help component is no longer rendered directly —
+// help output is now pushed as sequential text lines from App.jsx.
+// This file only exports COMMANDS for use by App.jsx and tab-completion.
+export default function Help() {
+  return null;
+}
